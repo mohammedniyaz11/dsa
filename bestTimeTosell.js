@@ -23,7 +23,7 @@ function bestTimeToSell(arr){
         if(price<min){
             min=price;
         }else{
-            max=Math.max(max,price-max)
+            max=Math.max(max,price-min)
         }
     }
     return max
