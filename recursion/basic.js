@@ -16,7 +16,7 @@ function recurse(nums){
     }
     console.log(nums)
     nums=nums+1;
-    recurse(nums)
+     recurse(nums)
 }
 
 recurse(1)
