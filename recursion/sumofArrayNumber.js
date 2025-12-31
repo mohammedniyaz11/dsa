@@ -1,6 +1,6 @@
 function sumofArrayNumbers(arr,index) {
     if(index==arr.length){
-        return;
+        return arr[0];
     }
     return arr[index]+sumofArrayNumbers(arr,index+1)
     
