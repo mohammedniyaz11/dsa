@@ -28,3 +28,18 @@ function powerOfTwoRecursiionWay(n){
 }
 
 // console.log(powerOfTwoRecursiionWay(4))
+
+
+function mazePath(r, c, path = "") {
+  if (r === 1 && c === 1) {
+    console.log(path);
+    return;
+  }
+  if (r === 0 || c === 0) return;
+
+  mazePath(r, c - 1, path + "R");
+  mazePath(r - 1, c, path + "D");
+}
+   
+
+
