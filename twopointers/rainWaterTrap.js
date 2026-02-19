@@ -37,3 +37,25 @@ function rainWater(height){
 }
 
 console.log(rainWater([4,2,0,3,2,5]))
+
+function rainWater(height) {
+    let heightleft = [];
+    let heightRight = [];
+    let trapWater = 0;
+    heightleft[0] = height[0]
+    let lastEle=height.length - 1;
+    heightRight[lastEle] = height[lastEle]
+
+    for (let i = 1; i < height.length; i++) {
+        heightleft[i] = Math.max(heightleft[i - 1], height[i])
+        heightRight[lastEle-i]=  Math.max(heightRight[lastEle-i+1], height[lastEle-i])
+    }
+    for (let i = 0; i < height.length; i++) {
+        let min = Math.min(heightRight[i], heightleft[i])
+        trapWater = trapWater + min - height[i]
+    }
+    return trapWater
+
+}
+
+console.log(rainWater([4, 2, 0, 3, 2, 5]))
