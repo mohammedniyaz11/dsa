@@ -23,4 +23,29 @@ function sortedSquares(nums) {
 }
 
 // Example
-console.log(sortedSquares([-4, -1, 0, 3, 10]));
+console.log(sortedSquareTwo([-4, -1, 0, 3, 10]));
+
+
+function sortedSquareTwo(nums) {
+    let left = 0;
+    let right = nums.length - 1;
+    let index = nums.length - 1;
+    let newArr = new Array(index)
+    while (left <= right) {
+        let squareNumberLeft = nums[left] * nums[left];
+        let squareNumberRight = nums[right] * nums[right]
+        if (squareNumberLeft > squareNumberRight) {
+            newArr[index] = squareNumberLeft;
+            left++;
+        } else {
+            newArr[index] = squareNumberRight;
+            right--;
+        }
+        index--;
+    }
+    return newArr
+    
+
+
+
+}
