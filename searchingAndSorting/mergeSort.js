@@ -63,3 +63,86 @@ function merge(left,right){
 
     return newArr.concat(left.slice(i)).concat(right.slice(j))
 }
+
+
+
+function mergeSort(arr){
+    if(arr.length<=1){
+        return arr;
+    }
+    let mid=Math.floor(arr.length/2);
+    let left=mergeSort(arr.slice(0,mid));
+    let right=mergeSort(arr.slice(mid));
+        return mergeSortTwoArr(left,right)
+
+}
+
+
+
+function mergeSortTwoArr(arr1, arr2) {
+    let i = 0;
+    let j = 0;
+    let result = []
+    while (arr1.length > i && arr2.length > j) {
+        if (arr1[i] < arr2[j]) {
+            result.push(arr1[i]);
+            i++;
+        } else {
+            result.push(arr2[j]);
+            j++;
+        }
+    }
+    return result.concat(arr1.slice(i)).concat(arr2.slice(j))
+}
+
+
+function bubbleSort(arr){
+    for(let i=0;i<arr.length-1;i++){
+        let swap=false;
+        for(let j=0;j<arr.length-i-1;j++){
+            if(arr[j]>arr[j+1]){
+                let temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+                swap=true;
+            }
+        }
+        if(!swap){
+            break;
+        }
+    }
+    return arr;
+}
+
+
+function selctionSort(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        let swapEle = i;
+        for (let j = i + 1; j < arr.length - 1; j++) {
+            if (arr[swapEle] > arr[j]) {
+                swapEle = j;
+            }
+        }
+        if (swapEle !== i) {
+            let temp = arr[i];
+            arr[i] = arr[swapEle];
+            arr[swapEle] = temp;
+        }
+    }
+    return arr;
+}
+
+
+function inserTionSort(arr){
+    for(let i=1;i<arr.length;i++){
+        let key=arr[i];
+        let j=i-1;
+        while(j>=0 && arr[j]>key){
+            arr[j+1]=arr[j]
+            j--;
+        }
+        arr[j+1]=key;
+    }
+    return arr;
+    
+}
