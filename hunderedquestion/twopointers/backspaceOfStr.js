@@ -11,4 +11,4 @@ function backspaceSingeStr(str){
 
 }
 
-console.log(bacjSpacOneStr("ab##"))
+console.log(backspaceSingeStr("abds##"))
