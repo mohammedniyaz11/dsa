@@ -9,7 +9,7 @@ var singleNonDuplicate = function (nums) {
         let middle = Math.floor((left + right) / 2);
         if (middle % 2 == 1) {
             middle--;
-        }
+        }`   `
         if (nums[middle] === nums[middle + 1]) {
             left = middle + 2;
         } else {
